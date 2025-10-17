@@ -1,0 +1,40 @@
+.footer-notice {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255,255,255,0.25); /* translucent red */
+  color:#423e3e;
+  font-family: Cambria, "Times New Roman", serif;
+  font-size: 1rem;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 3000;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+  animation: slideUpFade 2s ease forwards;
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+@media (max-width: 768px) {
+    .footer-notice {
+        background-color: rgba(240, 206, 206, 0.85); 
+    }
+
+}

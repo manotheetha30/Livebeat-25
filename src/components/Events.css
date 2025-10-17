@@ -1,0 +1,293 @@
+.event-section {
+  padding: 60px 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+}
+
+
+.event-section-title {
+  font-family: Cambria, "Times New Roman", serif;
+  font-size: 3rem;
+  color: #7e0000;
+  text-transform: uppercase;
+  margin-bottom: 30px; /* increased spacing below title */
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+}
+
+.event-section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #7e0000;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+/* Carousel */
+.event-carousel {
+  display: flex;
+  overflow-y: visible;
+  gap: 20px;
+  max-width: 1100px;
+  height: 310px;/* keeps everything in viewport */
+  margin: 0 auto;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  cursor: grab;
+  scroll-behavior: smooth;
+}
+
+
+
+.event-card {
+  flex: 0 0 32.5%;       /* Slightly wider to fit 3 cards comfortably */
+  min-width: 280px;    /* Ensures it doesn't shrink too small on smaller screens */
+  padding: 10px;       /* Taller card */
+  border-radius: 15px;
+  background: rgba(255,255,255,0.3);
+  text-align: center;
+  overflow-y:visible;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+  z-index: 10;
+}
+
+/* Logo inside card */
+.event-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+/* Title inside card */
+.event-name {
+color:#7e0000;
+  font-family: Cambria, serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* Description inside card */
+.event-shortdesc {
+    color:#423e3e;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Carousel container */
+.event-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  cursor: grab;
+  scroll-behavior: smooth;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.event-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.event-carousel:active {
+  cursor: grabbing;
+}
+
+
+
+
+.event-description {
+  text-align: justify;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #2d2d2d;
+}
+
+
+.event-longdesc strong {
+  display: block;
+  font-weight: bold;
+  color: #7e0000; /* highlight section headers */
+  margin-top: 12px;
+}
+
+
+/* Fade-in animation */
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fade-out animation */
+@keyframes fadeOutModal {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* Modal container (centered content) */
+.event-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Optional closing animation */
+.event-modal.closing {
+  animation: fadeOutModal 0.3s ease forwards;
+}
+
+/* Modal box */
+.event-modal-content {
+  background: rgba(201, 188, 188, 0.96);
+  padding: 30px;
+  font-family: Cambria, "Times New Roman", serif;
+  font-size: 1.1rem;
+  border-radius: 15px;
+  max-width: 550px;
+  max-height: 90vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  text-align: justify;
+  position: relative;
+
+}
+.event-modal-content::-webkit-scrollbar {
+  display: none;
+}
+.event-modal-content {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Close button */
+.event-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Bold section headers like "Event Format" */
+.event-longdesc  {
+  display: block;
+  margin-top: 2px;
+  text-align: left;
+  margin-bottom: 2px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #2d2d2d;
+}
+
+/* Centered Register Button */
+.event-register-btn {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(201, 188, 188, 0.96);
+  color: #2d2d2d;
+  font-family: Cambria, serif;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Hover effect for register button */
+.event-register-btn:hover {
+  transform: scale(1.05);
+  background-color: #7e0000;
+  color:#ffffff;
+}
+/* Modal content responsive adjustments */
+@media (max-width: 768px) {
+  .event-section-title{
+    font-size: 2rem;
+  }
+  .event-section-title::after{
+    width:53px;
+    height:3px;
+  }
+  .event-modal-content {
+    width: 90%; /* take 90% of screen width */
+    padding: 20px 15px; /* reduce padding slightly */
+    max-height: 85vh; /* fit within mobile viewport */
+  }
+
+  /* Long description lines alignment */
+  .event-longdesc {
+    text-align: left; /* ensures multi-line text is properly aligned */
+    margin: 8px 0; /* spacing between lines */
+    font-size: 1rem; /* slightly smaller for mobile */
+    line-height: 1.6;
+    word-break: break-word; /* prevents overflow of long words */
+  }
+
+  .event-longdesc strong {
+    font-weight: bold;
+    color: #7e0000;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  .event-name{
+    font-size: 1.5rem;
+
+  }
+  .event-shortdesc{
+    font-size:1.15rem;
+  }
+  .event-register-btn {
+    width: auto;
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+ 
+    .event-modal-close {
+    top: 0px;       /* move to top edge of modal */
+    right: 1px;    /* slightly inward from edge */
+    font-size: 2rem; /* keep it visible on small screens */
+  }
+}

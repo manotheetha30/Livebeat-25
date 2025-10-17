@@ -1,0 +1,577 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 30px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.iea-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 26px;
+  color: #423e3e;
+  font-family: Cambria, "Times New Roman", serif;
+}
+
+/* Desktop nav */
+.desktop-nav {
+  display: flex;
+  gap: 25px;
+}
+
+.desktop-nav button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #423e3e;
+  font-family: Cambria, "Times New Roman", serif;
+  transition: color 0.3s;
+}
+
+.desktop-nav button:hover {
+  color: #7e0000;
+}
+
+.hamburger {
+  font-size: 2.2rem;
+  cursor: pointer;
+  z-index: 1100;
+  color: #423e3e;
+}
+
+.cross {
+  font-size: 2.5rem;
+}
+
+.hamburger-lines {
+  font-size: 2.2rem;
+}
+
+
+/* Mobile menu overlay */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  background:rgba(255, 238, 238, 0.9);
+    backdrop-filter: blur(10px);           /* frosted glass effect */
+  -webkit-backdrop-filter: blur(10px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+  gap:30px;
+  transition: transform 0.3s ease;
+  transform: translateY(-100%);
+}
+
+.mobile-menu.open {
+  display: flex;
+  transform: translateY(0);
+}
+
+.mobile-menu .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile menu buttons inherit same styling as desktop */
+.mobile-menu button {
+  font-family: Cambria, "Times New Roman", serif; /* same as desktop */
+  font-size: 25px;                                 /* adjust as needed */
+  color: #423e3e;
+  
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.mobile-menu button:hover {
+  color: #7e0000; /* same hover effect */
+  transform: scale(1.05); /* optional small pop effect */
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Desktop nav remains unchanged */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    height: auto;
+    transform: translateY(0);
+    background: none;
+  }
+}
+
+
+/* Desktop nav remains untouched */
+@media (min-width: 769px) {
+  header nav button {
+    display: inline-block; /* keeps horizontal layout */
+    margin-left: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #423e3e;
+    font-family: Cambria, "Times New Roman", serif;
+    background: none;
+    border: none;
+    transition: color 0.3s;
+  }
+
+  header nav button:hover {
+    color: #7e0000;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    height: auto;
+    transform: translateY(0);
+    background: none;
+  }
+}
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(270deg, #d0c3c3, #cdb9b9, #edc9c9);
+  background-size: 600% 600%;
+  animation: gradientBG 20s ease infinite;
+  scroll-behavior: smooth;
+}
+
+.about-section {
+  width: 100%;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container {
+  max-width: 700px;
+  animation: fadeInUp 1.2s ease forwards;
+  text-align: center; /* title is centered */
+}
+
+.about-title {
+  font-family: Cambria, "Times New Roman", serif;
+  font-size: 3rem;
+  color: #7e0000;
+  text-transform: uppercase;
+  margin-bottom: 30px; /* increased spacing below title */
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+}
+
+.about-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #7e0000;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Translucent content box */
+.about-text-box {
+  background: rgba(255, 255, 255, 0.2); /* translucent, not pure white */
+  padding: 25px 20px;
+  border-radius: 15px;
+  text-align: justify;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3rem;
+  color: #3a3a3a;
+  line-height: 1.8;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover pop/zoom effect for the content only */
+.about-text-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+.pass-section {
+  width: 100%;
+  padding: 60px 20px;
+  
+  text-align: center;
+}
+
+.passes-title {
+  font-family: Cambria, "Times New Roman", serif;
+  font-size: 3rem;
+  color: #7e0000;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.passes-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #7e0000;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+.passes-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1000px; /* keeps everything in viewport */
+  margin: 0 auto;
+}
+
+.pass-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.3); /* translucent box */
+  border-radius: 15px;
+  width: 250px;              /* card width */
+  height: 280px;             /* increased height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* button sticks to bottom */
+  padding: 15px;             /* internal spacing */
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pass-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* Title Strip */
+.pass-header {
+  font-family: Cambria, "Times New Roman", serif;
+  font-size: 1.5rem;
+  color:#423e3e ;
+  background-color: inherit; /* controlled by pass.color in JSX */
+  padding: 12px 15px;         /* inner padding for text not touching edges */
+  border-radius: 10px;         /* all corners rounded */
+  margin-bottom: 15px;  
+     /* spacing below title strip */
+  text-align: center;
+}
+
+/* Price */
+.pass-price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #7e0000;
+  margin-bottom: 15px;  
+  margin-top: 15px;       /* spacing below price */
+}
+
+/* Description */
+.pass-description {
+  font-size: 1rem;
+  color: #3a3a3a;
+  line-height: 1.6;
+  flex-grow: 1;               /* description takes remaining space */
+  padding: 0 10px;            /* horizontal padding */
+  margin-bottom: 10px;
+  margin-top: 8px;
+}
+
+/* Button */
+.pass-btn {
+  margin-bottom: 15px;
+  padding: 12px 20px;
+
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #3a3a3a;
+  font-family: Cambria, "Times New Roman", serif;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.pass-btn:hover {
+  background-color: #7e0000;
+  color:#ffffff;
+  transform: scale(1.05);
+}
+
+
+
+.contact-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-title {
+  font-family: Cambria, "Times New Roman", serif;
+  font-size: 3rem;
+  color: #7e0000;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+.contact-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #7e0000;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  padding: 15px;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.contact-card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #7e0000;
+}
+
+.contact-card-link {
+  font-size: 0.9rem;
+  color: #423e3e;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  margin-top: 5px;
+  transition: color 0.3s ease;
+}
+
+.contact-card-link:hover {
+  color: #7e0000;
+  cursor: pointer;
+}
+
+/* ---------- Mobile tweaks: hero + cards + office images ---------- */
+@media (max-width: 768px) {
+
+  /* HERO: reduce vertical footprint so About sits closer */
+  .hero-section {
+    min-height: auto;        /* stop forcing full viewport */
+    padding-top: 28px;       /* small top spacing for header */
+    padding-bottom: 8px;
+  }
+  .hero-title {
+    font-size: 2rem;   
+    line-height: 40px;    /* readable but smaller */
+    margin-bottom:30px ;
+  }
+  .hero-date {
+    margin-top:5px ;
+    font-size: 2rem;
+    margin-bottom:1px ;
+  }
+  .about-title{
+    margin-top: 2px;
+    font-size: 2rem;
+
+  }
+  .about-title::after{
+    width:53px;
+    height:3px;
+
+  }
+  .about-text-box{
+    font-size: 1.25rem;
+    
+  }
+ 
+  .passes-title{
+    font-size: 2rem;
+  }
+  .passes-title::after{
+    width:53px;
+    height:3px;
+  }
+  .contact-title{
+    font-size: 2rem;
+  }
+  .contact-title::after{
+    width:53px;
+    height:3px;
+  }
+
+  .hero-livebeat-image {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 86%;
+    max-width: 420px;
+  }
+
+  /* CARDS: stack vertically, keep proportions and center neatly */
+  .passes-container,
+
+  .office-carousel {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    overflow-x: hidden;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 20px;
+    width: 100%;
+  }
+
+  .pass-card,
+
+  .office-card {
+    width: 92%;        /* maintain large card look but fit screen */
+    max-width: 300px;  /* prevents huge cards on large phones */
+    min-width: auto;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  /* Text scaling in cards for neatness */
+
+  .office-name,
+  .pass-name {
+    font-size: 1.15rem;
+  }
+  
+  .office-role,
+  .pass-desc {
+    font-size: 1.5rem;
+    line-height: 1.45;
+    text-align: center;
+  }
+
+  /* OFFICE: image alignment fix — keeps top visible, crops bottom if needed */
+  .office-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centers image & text */
+    gap: 12px;
+    padding: 18px;
+  }
+
+  /* image wrapper optional — if you use a wrapper, these rules still apply */
+  .office-img-wrapper {
+    width: 180px;
+    height: 180px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start; /* keep the top of the image visible */
+    justify-content: center;
+    background: rgba(255,255,255,0.02);
+  }
+
+  /* the image itself */
+  .office-img,
+  .office-card img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;      /* fills square, may crop */
+    object-position: top;   /* crop bottom only — keeps heads visible */
+    border-radius: 12px;
+    display: block;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  }
+
+  /* if user used object-fit:contain, switch to cover in mobile for consistent rounded corners */
+  /* .office-card img { object-fit: cover; object-position: top; } */
+
+  .contact-card-title{
+    font-size: 1.5rem;
+  }
+  .contact-card-link{
+    font-size: 1.15rem;
+  }
+  /* small tweak to section spacing so Home -> About gap is smaller on mobile */
+  #about {
+    margin-top: 16px;
+  }
+}
+
+
+
+
+
