@@ -292,7 +292,7 @@ color:#7e0000;
   .event-longdesc {
     text-align: left; /* ensures multi-line text is properly aligned */
     margin: 8px 0; /* spacing between lines */
-    font-size: 1rem; /* slightly smaller for mobile */
+    font-size: 1.15rem; /* slightly smaller for mobile */
     line-height: 1.6;
     word-break: break-word; /* prevents overflow of long words */
   }
@@ -301,7 +301,7 @@ color:#7e0000;
   text-align: left;
   margin-bottom: 2px;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.15rem;
   text-transform: none;
   line-height: 1.6;
   color: #7e0000;
@@ -311,7 +311,7 @@ color:#7e0000;
   color: #2d2d2d;
   text-decoration: none;
   transition: color 0.3s;
-  font-size: 1rem;
+  font-size: 1.15rem;
 }
 
   .event-longdesc strong {
@@ -324,6 +324,7 @@ color:#7e0000;
   .event-name{
     font-size: 1.5rem;
 
+
   }
   .event-shortdesc{
     font-size:1.15rem;
@@ -332,6 +333,9 @@ color:#7e0000;
     width: auto;
     padding: 12px 25px;
     font-size: 1rem;
+  }
+  .event-description{
+    font-size: 1.15rem;
   }
  
     .event-modal-close {
