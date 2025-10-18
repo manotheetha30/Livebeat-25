@@ -31,7 +31,7 @@ const Header: React.FC = () => {
 
   {/* Desktop Nav */}
   <nav className="desktop-nav">
-{["hero","about","pass","events","office bearers","contact"].map((sec) => (
+{["hero","about","events","pass","office bearers","contact"].map((sec) => (
   <button key={sec} onClick={() => scrollToSection(sec)}>
     {sec === "hero" ? "Home" : capitalizeWords(sec)}
   </button>
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
 
   {/* Mobile menu overlay */}
   <div className={`mobile-menu ${isMenuOpen ? "open" : ""}`}>
-    {["hero","about","pass","events","office bearers","contact"].map((sec) => (
+    {["hero","about","events","pass","office bearers","contact"].map((sec) => (
       <button key={sec} onClick={() => scrollToSection(sec)}>
         {sec === "hero" ? "Home" : capitalizeWords(sec)}
       </button>

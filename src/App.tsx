@@ -17,8 +17,8 @@ const App: React.FC = () => {
       <Header />
       <Hero />
       <About/>
-      <Pass />
       <Events />
+      <Pass />
       <OfficeBearers />
       <Contact />
       <Footer/>
