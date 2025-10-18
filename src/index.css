@@ -574,13 +574,6 @@ body {
 
 /* --- GLOBAL FIXES --- */
 
-/* Ensure base layout fills the screen */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 /* Smooth scrolling for section jumps */
 html {
@@ -593,13 +586,6 @@ body::-webkit-scrollbar {
   width: 0;
   background: transparent;      /* hide scrollbar - Chrome, Edge, Safari */
 }
-/* Root container */
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 
 
 
