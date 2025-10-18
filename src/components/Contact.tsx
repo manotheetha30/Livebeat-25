@@ -2,15 +2,15 @@ import React from "react";
 
 interface ContactInfo {
   title: string;
-  content: string | { role: string; value: string };
+  content: string | { name:String;role: string; value: string };
   type?: "phone" | "email" | "social" | "address";
   link?: string;
 }
 
 const contacts: ContactInfo[] = [
-  { title: "Phone", content: { role: "Chairperson", value: "+91 6381655601" }, type: "phone" },
-  { title: "Phone", content: { role: "General Secretary", value: "+91 6369564232" }, type: "phone" },
-  { title: "Phone", content: { role: "Event Coordinator", value: "+91 6374001217" }, type: "phone" },
+  { title: "Phone", content: { name:"Vishwa R" , role: "Chairperson", value: "+91 6381655601" }, type: "phone" },
+  { title: "Phone", content: { name:"Kalaiselvan L",role: "General Secretary", value: "+91 6369564232" }, type: "phone" },
+  { title: "Phone", content: { name:"Karthikeyan M",role: "Event Coordinator", value: "+91 6374001217" }, type: "phone" },
   { 
     title: "Address", 
     content: "Department of Instrumentation Engineering, MIT Campus, Anna University, Chennai-600044", 
@@ -52,6 +52,8 @@ const ContactUs: React.FC = () => {
     c.content
   ) : (
     <>
+    <strong><span>{c.content.name}</span></strong>
+    <br/>
       <span>{c.content.role}</span>
       <br />
       <span>{c.content.value}</span>

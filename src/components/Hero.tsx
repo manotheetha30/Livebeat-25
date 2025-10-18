@@ -26,7 +26,6 @@ const Hero: React.FC = () => {
         alt="LiveBeat '25"
         className={`hero-livebeat-image ${animate ? "animate" : ""}`}
       />
-
       {/* Date */}
       <p className={`hero-date ${animate ? "animate" : ""}`}>
         25<sup>th</sup> OCTOBER

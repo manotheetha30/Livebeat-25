@@ -7,13 +7,19 @@ import circuitsprint from "../assets/circuitsprint.png";
 import treasurehunt from "../assets/treasurehunt.png";
 import clashofcards from "../assets/clashofcards.png";
 
+type ContactInfo = {
+  name: string;
+  phone: string;
+};
+
 type EventInfo = {
   name: string;
   logo: string;
   shortDescription: string;
-  descript:String;
-  longDescription: string[]; // array for multi-line content
+  descript: string;
+  longDescription: string[];
   registerLink: string;
+  contacts?: ContactInfo[]; // add this line
 };
 
 const events: EventInfo[] = [
@@ -31,7 +37,11 @@ const events: EventInfo[] = [
       "5. Plagiarism Limit: ≤ 20%"
     ],
     logo: paperxplore,
-    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSee1C2CvB8gsTnj7kuLbbgm9dHal4C44GsyB7dzZ7Y3WAQAbw/viewform?usp=header"
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSee1C2CvB8gsTnj7kuLbbgm9dHal4C44GsyB7dzZ7Y3WAQAbw/viewform?usp=header",
+    contacts: [
+      {name:"Venkatesh S",phone:"+91 8637493621"},
+      {name:"Rajappa M",phone:"+91 8667077899"}
+    ]
   },
   {
     name: "Tech Quest",
@@ -45,8 +55,11 @@ const events: EventInfo[] = [
   "4. Tie Breaker: A rapid-fire round for the fastest minds if there’s a tie."
 ],
     logo: techquest,
-    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSfL8UuhT1KFYu9Ha_C5vWmhUlA05rjb-LVdXV3I3KWuPP8ikQ/viewform?usp=header"
-  },
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSfL8UuhT1KFYu9Ha_C5vWmhUlA05rjb-LVdXV3I3KWuPP8ikQ/viewform?usp=header",
+       contacts: [
+      {name:"Nithya Devi S",phone:"+91 9894684550"},
+      {name:"Mohamed Murshida S",phone:"+91 8838046048"} ]
+ },
   {
     name: "Code Forge",
     shortDescription: "Test your coding skills with algorithmic challenges",
@@ -59,8 +72,10 @@ longDescription:["Event Format and Rules:",
 "5. Each program must include a proper function definition for the main logic."],
 
     logo: codeforge,
-    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdm68aQAUd1xMC6jDaubxatQrK7RTR0Tizeqw2pV75cEZK08Q/viewform?usp=header"
-  },
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdm68aQAUd1xMC6jDaubxatQrK7RTR0Tizeqw2pV75cEZK08Q/viewform?usp=header",
+         contacts: [
+      {name:"Bharath R",phone:"+91 7418099057"},
+      {name:"Daphne Starina J",phone:"+91 9345631936"} ] },
   {
     name: "Circuit Sprint",
     descript:"Circuit Sprint challenges participants to design and implement circuits to process real-world signals. Competitors will showcase their skills in both simulation and practical signal processing.",
@@ -71,7 +86,10 @@ longDescription:["Event Format and Rules:",
       "3. Round 2: Design a circuit to process a real-world audio signal, focusing on filter design using MATLAB."
     ],
     logo: circuitsprint,
-    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdxGzRg1DC-yuCINXSvhth8plKG4oD4St5HV2sKx-RGOzRqPQ/viewform?usp=header"
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdxGzRg1DC-yuCINXSvhth8plKG4oD4St5HV2sKx-RGOzRqPQ/viewform?usp=header",
+     contacts: [
+      {name:"Venkatajhalam S",phone:"+91 6374001217"},
+   ]
   },
   {
     name: "Treasure Hunt",
@@ -87,8 +105,10 @@ longDescription:["Event Format and Rules:",
   "  - Objective: Collect additional tokens around the campus.",
   "  - Clues: Clues will be revealed at intervals of 3 minutes."],
     logo: treasurehunt,
-    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSc5TDxdPMmvVBo8Ggr4t4Sg8r_hp4RTS5eacbaY9gK8gaQ0_Q/viewform?usp=header"
-  },
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSc5TDxdPMmvVBo8Ggr4t4Sg8r_hp4RTS5eacbaY9gK8gaQ0_Q/viewform?usp=header",
+   contacts: [
+      {name:"Divyadharshini BS",phone:"+91 8148626020"},
+      {name:"Keerthana R",phone:"+91 6380641800"} ]},
   {
     name: "Clash of Cards: UNO",
     descript:"Get ready to showcase your strategy and quick thinking in Clash of Cards! This solo UNO tournament will test your ability to outplay your opponents, manage your hand wisely, and claim victory by being the first to discard all your cards. With multiple elimination rounds leading to a thrilling final match, only the sharpest players will survive to the end.",
@@ -99,8 +119,10 @@ longDescription:["Event Format and Rules:",
   "3. Multiple elimination rounds culminating in a final match",
   "4. Standard UNO rules will be followed throughout the event."],
     logo: clashofcards,
-    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSc--eztCRbk1oOf6-SJ0ML9Z3pSeVzOs46xV7j6cjhkNg_Mww/viewform?usp=header"
-  }
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSc--eztCRbk1oOf6-SJ0ML9Z3pSeVzOs46xV7j6cjhkNg_Mww/viewform?usp=header",
+   contacts: [
+      {name:"Swathi G",phone:"+91 9942428260"},
+      {name:"Vishnu Varshni V",phone:"+91 8946065513"} ]}
 ];
 const EventSection: React.FC = () => {
   const [activeEvent, setActiveEvent] = useState<EventInfo | null>(null);
@@ -149,7 +171,22 @@ const EventSection: React.FC = () => {
                   : line}
               </p>
             ))}
-
+            
+            {/* Contact Section (Above Register Button) */}
+            {activeEvent.contacts && activeEvent.contacts.length > 0 && (
+              <div className="event-contacts">
+                <p className="contact-title2">For any assistance or event-related queries, reach out to:</p>
+                <ul>
+                  {activeEvent.contacts.map((c, i) => (
+                    <li key={i}>
+                      <a href={`tel:${c.phone}`} className="contact-link">
+                        {c.name} — {c.phone}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <button
               className="event-register-btn"
               onClick={() => (window.location.href = activeEvent.registerLink)}
