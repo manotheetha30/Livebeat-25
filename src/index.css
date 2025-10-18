@@ -572,20 +572,32 @@ body {
   }
 }
 
-/* Hide vertical scrollbar but allow scrolling */
-html,body {
-  height:100%;
-  overflow-y: scroll;          /* allow scrolling */
-  scrollbar-width: none;       /* Firefox */
-  -ms-overflow-style: none;  
-  scroll-behavior: smooth;
-  overscroll-behavior-y: contain;  /* IE 10+ */
+/* --- GLOBAL FIXES --- */
+
+/* Ensure base layout fills the screen */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html::-webkit-scrollbar,
+/* Smooth scrolling for section jumps */
+html {
+  scroll-behavior: smooth;
+}
+
+
+
 body::-webkit-scrollbar {
-  width: 0px;                  /* Chrome, Safari, Opera */
-  background: transparent;     /* optional: hide track */
+  width: 0;
+  background: transparent;      /* hide scrollbar - Chrome, Edge, Safari */
+}
+/* Root container */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 
