@@ -572,14 +572,6 @@ body {
   }
 }
 
-/* --- GLOBAL FIXES --- */
-
-
-/* Smooth scrolling for section jumps */
-html {
-  scroll-behavior: smooth;
-}
-
 
 
 body::-webkit-scrollbar {
