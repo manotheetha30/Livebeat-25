@@ -278,6 +278,7 @@ body {
 .passes-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 20px;
   flex-wrap: wrap;
   max-width: 1000px; /* keeps everything in viewport */
@@ -486,13 +487,13 @@ body {
 
   /* CARDS: stack vertically, keep proportions and center neatly */
   .passes-container,
-
   .office-carousel {
     display: flex !important;
     flex-direction: column;
     align-items: center;
     gap: 22px;
     overflow-x: hidden;
+    justify-content: center;
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 20px;
@@ -571,6 +572,21 @@ body {
   }
 }
 
+/* Hide vertical scrollbar but allow scrolling */
+html,body {
+  height:100%;
+  overflow-y: scroll;          /* allow scrolling */
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;  
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;  /* IE 10+ */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0px;                  /* Chrome, Safari, Opera */
+  background: transparent;     /* optional: hide track */
+}
 
 
 

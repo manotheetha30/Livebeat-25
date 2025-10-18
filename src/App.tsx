@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 const App: React.FC = () => {
   return (
     <div>
+
       <Header />
       <Hero />
       <About/>
@@ -21,6 +22,7 @@ const App: React.FC = () => {
       <OfficeBearers />
       <Contact />
       <Footer/>
+      
     </div>
   );
 };
